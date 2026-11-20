@@ -1,5 +1,7 @@
 # Absurd Opinions Problems
 
+**Live site:** https://favoritedevx.github.io/absurd-opinions-problems/
+
 A gigantic database of humanity's most pointless disagreements, in small cards:
 *How many people prefer cereal first over milk first? How many think a hot dog is a sandwich?
 How many think they could beat a goose in a fight?*
