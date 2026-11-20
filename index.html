@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Absurd Opinions Problems</title>
+  <meta name="description" content="A gigantic database of humanity's most pointless disagreements. Real polls where they exist, honest guesses where they don't.">
+  <meta property="og:title" content="Absurd Opinions Problems">
+  <meta property="og:description" content="How many people prefer cereal before milk? Pick a side and find out how normal you are.">
+  <meta name="theme-color" content="#fbfbf9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='11' width='19' height='10' rx='5' fill='%234f7cff'/%3E%3Crect x='17' y='11' width='13' height='10' rx='5' fill='%23ff7a59'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="logo" aria-hidden="true"><span class="logo-a"></span><span class="logo-b"></span></div>
+    <h1>Absurd Opinions Problems</h1>
+    <p class="tagline">A gigantic database of humanity’s most pointless disagreements.<br>Real polls where they exist. Honest guesses where they don’t.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num" id="pop-now">8,300,000,000</span>
+        <span class="stat-label">humans alive right now <span class="muted">(est.)</span></span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="topic-count">0</span>
+        <span class="stat-label">absurd opinions</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="normie">—</span>
+        <span class="stat-label" id="normie-label">your normie score</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar" id="toolbar">
+    <div class="toolbar-inner">
+      <div class="toolbar-row">
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="search" type="search" placeholder="Search opinions…  ( / )" autocomplete="off" aria-label="Search opinions">
+        </label>
+        <select id="sort" aria-label="Sort">
+          <option value="shuffle">Shuffled</option>
+          <option value="divisive">Most divisive</option>
+          <option value="lopsided">Least divisive</option>
+          <option value="real">Real data first</option>
+          <option value="az">A → Z</option>
+        </select>
+        <button class="btn" id="random" type="button" title="Jump to a random opinion">🎲 <span>Random</span></button>
+      </div>
+      <div class="chips" id="cats"></div>
+      <div class="tiers" id="tiers" aria-label="Filter by data quality"></div>
+    </div>
+  </div>
+
+  <main>
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+    <section class="grid" id="grid"></section>
+    <p class="empty" id="empty" hidden>No absurd opinions match that. Suspicious.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h2>How to read the numbers</h2>
+        <ul class="legend">
+          <li><span class="tier tier-measured">Measured</span> Real-world usage data or a scientific measurement.</li>
+          <li><span class="tier tier-survey">Poll</span> A published poll. Mostly US or UK adults, and wording varies, so treat it as a snapshot. When a poll reports both sides, the bar shows the split among people who picked one.</li>
+          <li><span class="tier tier-guess">Educated guess</span> No reliable data found. It’s an estimate, so vote and argue with it.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>The live people counter</h2>
+        <p>Each card multiplies its percentage by an estimated live world population (about 8.3 billion in mid-2026, growing roughly 2 people per second). It shows what the planet would look like if everyone answered like the poll. It is an extrapolation, not a headcount.</p>
+        <p><button class="link-btn" id="reset-votes" type="button">Forget my votes</button></p>
+      </div>
+    </div>
+    <p class="fineprint">Absurd Opinions Problems · Every source is linked on its card. Found a better poll? Add it in <code>assets/data.js</code>.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
